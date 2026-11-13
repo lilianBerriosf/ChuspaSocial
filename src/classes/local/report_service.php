@@ -158,6 +158,10 @@ class report_service {
 
             if ($report->itemtype === 'post') {
                 $DB->set_field('local_chuspasocial_post', 'hidden', 1, ['id' => $report->itemid]);
+            } else if ($report->itemtype === 'comment') {
+                $DB->set_field('local_chuspasocial_comment', 'hidden', 1, ['id' => $report->itemid]);
+            } else if ($report->itemtype === 'listing') {
+                $DB->set_field('local_chuspasocial_listing', 'hidden', 1, ['id' => $report->itemid]);
             }
             $transaction->allow_commit();
         } catch (\Throwable $e) {

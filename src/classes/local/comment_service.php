@@ -34,6 +34,7 @@ class comment_service {
      * Get the comments of a post, oldest first.
      *
      * Returns an empty array when the post does not exist or is hidden.
+     * Comments hidden by moderation are not returned.
      *
      * @param int $postid ID of the post to get the comments from.
      * @return array List of comment records, oldest first.
@@ -49,7 +50,7 @@ class comment_service {
 
         return array_values($DB->get_records(
             'local_chuspasocial_comment',
-            ['postid' => $postid],
+            ['postid' => $postid, 'hidden' => 0],
             'timecreated ASC, id ASC'
         ));
     }
