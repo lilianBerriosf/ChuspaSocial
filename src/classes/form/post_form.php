@@ -59,7 +59,7 @@ class post_form extends \moodleform {
             $mform->addElement(
                 'advcheckbox',
                 'announcement',
-                get_string('announcement', 'local_chuspasocial')
+                get_string('markasannouncement', 'local_chuspasocial')
             );
             $mform->setType('announcement', PARAM_BOOL);
         }
