@@ -103,6 +103,12 @@ foreach ($records as $record) {
     $data['authorname'] = $data['authorfullname'];
     $data['isannouncement'] = ($record->type === post::TYPE_ANNOUNCEMENT);
 
+    // Edited mark and edit link (only for the author).
+    $data['edited'] = (int) $record->timemodified > (int) $record->timecreated;
+    if (!empty($data['canedit'])) {
+        $data['editurl'] = (new moodle_url('/local/chuspasocial/post_edit.php', ['id' => $record->id]))->out(false);
+    }
+
     $posts[] = $data;
 }
 

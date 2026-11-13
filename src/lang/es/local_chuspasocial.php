@@ -51,6 +51,7 @@ $string['currency_desc'] = 'Moneda utilizada para mostrar los precios.';
 $string['deletecomment'] = 'Eliminar comentario';
 $string['deletepost'] = 'Eliminar publicación';
 $string['edited'] = 'Editado';
+$string['editpost'] = 'Editar publicación';
 $string['enablemarketplace'] = 'Habilitar el mercado';
 $string['enablemarketplace_desc'] = 'Permitir el uso del mercado de ChuspaSocial.';
 $string['errorpostempty'] = 'La publicación no puede estar vacía.';

@@ -48,6 +48,7 @@ $string['currency_desc'] = 'Currency used to display prices.';
 $string['deletecomment'] = 'Delete comment';
 $string['deletepost'] = 'Delete post';
 $string['edited'] = 'Edited';
+$string['editpost'] = 'Edit post';
 $string['enablemarketplace'] = 'Enable marketplace';
 $string['enablemarketplace_desc'] = 'Allow the use of the ChuspaSocial marketplace.';
 $string['errorpostempty'] = 'The post cannot be empty.';
