@@ -62,6 +62,7 @@ class comment_service {
      * @param string $content Text content of the comment.
      * @return \local_chuspasocial\local\persistent\comment The created comment.
      * @throws \moodle_exception If the post is not visible or the user cannot comment.
+     * @throws \invalid_parameter_exception If the content is empty or only whitespace.
      */
     public static function add_comment(int $postid, string $content): \local_chuspasocial\local\persistent\comment {
         global $USER;
@@ -84,6 +85,11 @@ class comment_service {
 
         // Check whether the current user can comment.
         require_capability('local/chuspasocial:comment', $context);
+
+        // Reject empty comments or comments made only of whitespace.
+        if (trim($content) === '') {
+            throw new \invalid_parameter_exception('The comment content cannot be empty');
+        }
 
         // Create and return the comment.
         $comment = new \local_chuspasocial\local\persistent\comment(0, (object) [
